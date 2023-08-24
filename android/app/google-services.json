@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "656437876178",
+    "project_id": "bot-bridge-rider",
+    "storage_bucket": "bot-bridge-rider.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656437876178:android:42b1255c0a18fdaffea40b",
+        "android_client_info": {
+          "package_name": "com.example.botbridge_rider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "656437876178-8smlgmqgare3tntii5km2lunq9n52pcj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJMV8itT5WnJUXfnjvIKnokabZEJr1_gI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "656437876178-8smlgmqgare3tntii5km2lunq9n52pcj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
