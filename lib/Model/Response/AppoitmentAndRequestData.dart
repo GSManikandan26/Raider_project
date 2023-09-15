@@ -65,8 +65,10 @@ class LstPatientResponse {
   bool? isStart;
   bool? isPaid;
   int? userNo;
+  String? title;
   int? venueNo;
   int? venueBranchNo;
+  String? referedDr;
   List<LstTestDetails>? lstTestDetails;
   List<LstTestSampleWise>? lstTestSampleWise;
 
@@ -97,8 +99,10 @@ class LstPatientResponse {
         this.isStart,
         this.isPaid,
         this.userNo,
+        this.title,
         this.venueNo,
         this.venueBranchNo,
+        this.referedDr,
         this.lstTestDetails,
         this.lstTestSampleWise});
 
@@ -129,8 +133,10 @@ class LstPatientResponse {
     isStart = json['isStart'];
     isPaid = json['isPaid'];
     userNo = json['userNo'];
+        title = json['title'];
     venueNo = json['venueNo'];
     venueBranchNo = json['venueBranchNo'];
+    referedDr=json['referedDr'];
     if (json['lstTestDetails'] != null) {
       lstTestDetails = <LstTestDetails>[];
       json['lstTestDetails'].forEach((v) {
@@ -173,8 +179,11 @@ class LstPatientResponse {
     data['isStart'] = this.isStart;
     data['isPaid'] = this.isPaid;
     data['userNo'] = this.userNo;
+        data['title'] = this.title;
+
     data['venueNo'] = this.venueNo;
     data['venueBranchNo'] = this.venueBranchNo;
+    data['referedDr']=this.referedDr!;
     if (this.lstTestDetails != null) {
       data['lstTestDetails'] =
           this.lstTestDetails!.map((v) => v.toJson()).toList();

@@ -28,6 +28,7 @@ class NewBookingView extends StatefulWidget {
 
 class _NewBookingViewState extends State<NewBookingView> {
   final _formkey = GlobalKey<FormState>();
+    final TextEditingController Username= TextEditingController();
   final TextEditingController firstName = TextEditingController();
   final TextEditingController lastName = TextEditingController();
   final TextEditingController mobileNo = TextEditingController();
@@ -39,6 +40,9 @@ class _NewBookingViewState extends State<NewBookingView> {
   final TextEditingController remark = TextEditingController();
   final TextEditingController dob = TextEditingController();
   final TextEditingController doctorName = TextEditingController();
+    final TextEditingController referdr = TextEditingController();
+    final TextEditingController title = TextEditingController();
+
   final TextEditingController clientName = TextEditingController();
   final TextEditingController age = TextEditingController();
   DateTime selectedDate = DateTime.now();
@@ -246,7 +250,7 @@ class _NewBookingViewState extends State<NewBookingView> {
                                         mobileNo.text = data['no'].toString();
                                         emailID.text = data['mail'].toString();
                                         pincode.text = data['pincode'].toString();
-                                        pincode.text = data['dob'].toString();
+                                        dob.text = data['dob'].toString();
                                         age.text = data['age'].toString();
                                       }
                                       print(value);
@@ -323,6 +327,45 @@ class _NewBookingViewState extends State<NewBookingView> {
                   child: Column(
                     children: [
                       SizedBox(height: height * 0.03,),
+                       SizedBox(
+             width:  width * 0.9,
+             height: height * 0.07,
+             child: TextFormField(
+                       textInputAction: TextInputAction.next,
+                       cursorColor: Colors.black,
+                       controller: Username,
+                       style: const TextStyle(color: Colors.black54),
+               keyboardType: TextInputType.name,
+               textCapitalization: TextCapitalization.words,
+               inputFormatters: <TextInputFormatter>[
+                 FilteringTextInputFormatter.allow(RegExp("[a-zA-Z ]")),
+               ],
+               validator: (value) {
+                 if (value!.isEmpty) {
+                   return "";
+                 }
+                 return null;
+               },
+
+               decoration: InputDecoration(
+                         // filled: true,
+                   // errorText: '',
+                   errorStyle: const TextStyle(
+                     color: Colors.transparent,
+                     fontSize: 0,
+                   ),
+                   // contentPadding: const EdgeInsets.only(bottom: 4,left: 12),
+                         errorBorder: outline,
+                         focusedErrorBorder: outline,
+                         enabledBorder:outline,
+                         focusedBorder:outline,
+                         // focusColor: const Color(0xffEFEFEF),
+
+                         label: const Text('User Name*',style: TextStyle(color: Colors.black54,fontSize: 14),)
+                       ),
+             ),
+           ),
+                      SizedBox(height: height * 0.013),
            SizedBox(
              width:  width * 0.9,
              height: height * 0.07,
@@ -632,6 +675,85 @@ class _NewBookingViewState extends State<NewBookingView> {
                         ),
                       ),
                       SizedBox(height: height * 0.013),
+                       SizedBox(
+             width:  width * 0.9,
+             height: height * 0.07,
+             child: TextFormField(
+                       textInputAction: TextInputAction.next,
+                       cursorColor: Colors.black,
+                       controller: title,
+                       style: const TextStyle(color: Colors.black54),
+               keyboardType: TextInputType.name,
+               textCapitalization: TextCapitalization.words,
+               inputFormatters: <TextInputFormatter>[
+                 FilteringTextInputFormatter.allow(RegExp("[a-zA-Z ]")),
+               ],
+               validator: (value) {
+                 if (value!.isEmpty) {
+                   return "";
+                 }
+                 return null;
+               },
+
+               decoration: InputDecoration(
+                         // filled: true,
+                   // errorText: '',
+                   errorStyle: const TextStyle(
+                     color: Colors.transparent,
+                     fontSize: 0,
+                   ),
+                   // contentPadding: const EdgeInsets.only(bottom: 4,left: 12),
+                         errorBorder: outline,
+                         focusedErrorBorder: outline,
+                         enabledBorder:outline,
+                         focusedBorder:outline,
+                         // focusColor: const Color(0xffEFEFEF),
+
+                         label: const Text('Title',style: TextStyle(color: Colors.black54,fontSize: 14),)
+                       ),
+             ),
+           ),
+                      SizedBox(height: height * 0.013),
+                        SizedBox(
+             width:  width * 0.9,
+             height: height * 0.07,
+             child: TextFormField(
+                       textInputAction: TextInputAction.next,
+                       cursorColor: Colors.black,
+                       controller: referdr,
+                       style: const TextStyle(color: Colors.black54),
+               keyboardType: TextInputType.name,
+               textCapitalization: TextCapitalization.words,
+               inputFormatters: <TextInputFormatter>[
+                 FilteringTextInputFormatter.allow(RegExp("[a-zA-Z ]")),
+               ],
+               validator: (value) {
+                 if (value!.isEmpty) {
+                   return "";
+                 }
+                 return null;
+               },
+
+               decoration: InputDecoration(
+                         // filled: true,
+                   // errorText: '',
+                   errorStyle: const TextStyle(
+                     color: Colors.transparent,
+                     fontSize: 0,
+                   ),
+                   // contentPadding: const EdgeInsets.only(bottom: 4,left: 12),
+                         errorBorder: outline,
+                         focusedErrorBorder: outline,
+                         enabledBorder:outline,
+                         focusedBorder:outline,
+                         // focusColor: const Color(0xffEFEFEF),
+
+                         label: const Text('Refered Doctor',style: TextStyle(color: Colors.black54,fontSize: 14),)
+                       ),
+             ),
+           ),
+                      SizedBox(height: height * 0.013),
+                      
                       SizedBox(
                         width:  width * 0.9,
                         height: height * 0.07,

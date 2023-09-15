@@ -369,8 +369,7 @@ class HomeGridData{
 final List<HomeGridData> listGrid = [
   HomeGridData("Appointment",'assets/images/appointment.png',"Make your formal arrangement at your home,\nat your place, anywhere.",const AppointmentView()),
   HomeGridData("New Request",'assets/images/new_request.png',"Request for access to our Facilities \nand Services",const NewRequestView()),
-  HomeGridData("History",'assets/images/history.png',"Record of information about a person’s \nhealth",const HistoryView()),
   HomeGridData("Samples",'assets/images/sample_collected.png',"Total number  of blood samples collected \nfrom the patients", const CollectedSamplesView()),
+  HomeGridData("History",'assets/images/history.png',"Record of information about a person’s \nhealth",const HistoryView()),
 ];
-
 

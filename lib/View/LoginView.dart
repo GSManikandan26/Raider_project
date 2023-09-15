@@ -1,6 +1,8 @@
 import 'package:botbridge_green/Utils/NavigateController.dart';
 import 'package:botbridge_green/View/Helper/ThemeCard.dart';
 import 'package:botbridge_green/View/HomeView.dart';
+import 'package:botbridge_green/View/SignUpView.dart';
+import 'package:botbridge_green/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -20,6 +22,17 @@ class _LoginViewState extends State<LoginView> {
   final _formkey = GlobalKey<FormState>();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+    final AuthService authService = AuthService();
+
+  void loginUser() {
+    authService.signInUser(
+      context: context,
+      email: email.text,
+      password: password.text,
+    );
+  }
+  
+  
   @override
   void initState() {
     // TODO: implement initState
@@ -178,19 +191,20 @@ class _LoginViewState extends State<LoginView> {
                             ),
                             onPressed: () {
                               // NavigateController.pagePush(context, const HomeView());
-                              Map<String,dynamic> data = {
-                                "userName": email.text,
-                                "password": password.text,
-                                "deviceType": "ANDROID",
-                                "requestType": "HC",
-                                "latitude": "",
-                                "longitude": ""
-                              };
-                              print(data);
-                              if(_formkey.currentState!.validate()){
-                                SignInVM foodNotifier = Provider.of<SignInVM>(context, listen: false);
-                                loginMain( context, data,foodNotifier,true);
-                              }
+                              // Map<String,dynamic> data = {
+                              //   "userName": email.text,
+                              //   "password": password.text,
+                              //   "deviceType": "ANDROID",
+                              //   "requestType": "HC",
+                              //   "latitude": "",
+                              //   "longitude": ""
+                              // };
+                              // print(data);
+                              // if(_formkey.currentState!.validate()){
+                              //   SignInVM foodNotifier = Provider.of<SignInVM>(context, listen: false);
+                              //   loginMain( context, data,foodNotifier,true);
+                              // }
+                              loginUser();
 
                             },
                             child: const Text('Sign in',style: TextStyle(color: Colors.green,fontSize: 19,fontWeight: FontWeight.w600),),
@@ -199,9 +213,13 @@ class _LoginViewState extends State<LoginView> {
                         SizedBox(height: height*0.03),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children:  [
                             Text("Don't Have an Account?",style: TextStyle(color: Colors.white60,fontSize: 14),),
-                            Text('SignUp',style: TextStyle(color: Colors.indigo,fontSize: 16,fontWeight: FontWeight.bold),),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: ((context) => SignUpView())));
+                              },
+                              child: Text('SignUp',style: TextStyle(color: Colors.indigo,fontSize: 16,fontWeight: FontWeight.bold),)),
 
                           ],
                         ),

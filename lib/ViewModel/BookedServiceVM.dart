@@ -70,8 +70,10 @@ class BookedServiceVM extends ChangeNotifier{
             "isStart": true,
             "isPaid": false,
             "userNo": 2,
+            "title":'',
             "venueNo": 1,
             "venueBranchNo": 1,
+            "referedDr": "",
             "lstTestDetails": [
 
             ],

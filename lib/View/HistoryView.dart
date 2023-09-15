@@ -225,7 +225,7 @@ class _HistoryViewState extends State<HistoryView> {
                                                             ),
                                                             SizedBox(
                                                                 width: width * 0.6,
-                                                                child: Text("${VM.lstPatientResponse![index].address}",style: const TextStyle(color: Colors.grey,fontWeight: FontWeight.w600),maxLines: 1,overflow: TextOverflow.ellipsis,)),
+                                                                child: Text("${VM.lstPatientResponse![index].address}",style: const TextStyle(color: Colors.grey,fontWeight: FontWeight.w600),maxLines: 2,overflow: TextOverflow.ellipsis,)),
                                                             SizedBox(
                                                               height: height * 0.01,
                                                             ),
